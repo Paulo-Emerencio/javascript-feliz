@@ -1,4 +1,10 @@
-const style = `<style>
+const style = `
+<style>
+    :root {
+        --line-height: 10px;
+        --slide-color: #EAB543;
+    }
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +29,8 @@ body{
     text-align: center;
     padding-top: 4rem;
 }
-</style>`
+</style>
+`
 
 const head = document.querySelector('head')
 head.insertAdjacentHTML('beforeend', style)
