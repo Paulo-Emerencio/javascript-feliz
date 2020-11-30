@@ -2,11 +2,11 @@ const Slide = (css, content) => (
     `<ul style="${css}">${content}</ul>`
 )
 
-const Item = (css) => {
+const Item = (css, className) => {
     createStyles(css)
 
     return (
-        `<li class="item" style="${css}" onclick="handleClick()"></li>`
+        `<li class="item ${className}" style="${css}" onclick="handleClick()"></li>`
     )
 }
 

@@ -23,7 +23,7 @@ root.insertAdjacentHTML('beforeend', alien)
 root.insertAdjacentHTML('beforeend', alien)
 root.insertAdjacentHTML('beforeend', alien)
 
-// Inserindo o Slide de dificuldade
+// Fazendo o Slide de dificuldade
 // Bola Branca
 const action = Action`
     .action{
@@ -33,30 +33,32 @@ const action = Action`
         height: calc(var(--line-height) * 4);
         width: calc(var(--line-height) * 4);
         position: absolute;
-        left: 5px;
+        left: -10px;
     }
 `
-// Bolinhas de fundo
-const item = Item`
-    .item {
-        height: calc(var(--line-height) * 2);
-        width: calc(var(--line-height) * 2);
-        background-color: var(--slide-color);
-        border-radius: 50%;
-        list-style: none;
-    }
-`
-// Bolinha de fundo selecionada
-const itemActive = Item`
-    height: calc(var(--line-height) * 5);
-    width: calc(var(--line-height) * 5);
-    background-color: var(--slide-color);
-    border-radius: 50%;
-    list-style: none;
-`
+
 // Função para determinar o item ativo
 const states = [true, false, false]
 function showItems(stateItems) {
+    //Bolinhas laranjas pequenas (não selecionadas)
+    const item = Item`
+        .item {
+            height: calc(var(--line-height) * 2);
+            width: calc(var(--line-height) * 2);
+            background-color: var(--slide-color);
+            border-radius: 50%;
+            list-style: none;
+        }
+    `
+    //Bolinha laranja selecionada (grande)
+    const itemActive = Item`
+        .item.active {
+            transform: scale(2.4)
+        }
+        
+        ${'active'}
+    `
+
     const items = stateItems.map(state => {
         if (state) {
             return itemActive
@@ -66,6 +68,7 @@ function showItems(stateItems) {
 
     return items.join('')
 }
+
 // Função de clique nas bolinhas
 function handleClick(){
     console.log('Aeeee Carai!!!')
