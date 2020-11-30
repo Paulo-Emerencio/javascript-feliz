@@ -29,8 +29,7 @@ body{
     text-align: center;
     padding-top: 4rem;
 }
-</style>
-`
+</style>`
 
 const head = document.querySelector('head')
 head.insertAdjacentHTML('beforeend', style)
