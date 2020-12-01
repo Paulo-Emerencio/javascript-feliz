@@ -6,7 +6,7 @@ const Item = (css, className) => {
     createStyles(css)
 
     return (
-        `<li class="item ${className}" style="${css}" onclick="handleClick()"></li>`
+        `<li class="item ${className}" onclick="handleClick(event)"></li>`
     )
 }
 
@@ -14,6 +14,6 @@ const Action = (css) => {
     createStyles(css)
 
     return (
-        `<li class="action" style="${css}"></li>`
+        `<li class="action"></li>`
     )
 }
